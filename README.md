@@ -1,16 +1,20 @@
-
-# HBPA: A Machine Learning Approach to Handwriting-Based Psychological Assessment
+# Handwriting-Based Psychological Assessment with Machine Learning
 
 ## Overview
 
-This project automates graphological analysis using machine learning to predict personality traits from handwriting. It processes handwritten images, extracts relevant features, and applies machine learning models to determine psychological attributes.
+This project applies machine learning to automate graphological analysis, predicting personality traits from handwriting. By processing handwritten samples, extracting key features, and using machine learning models, the system provides psychological insights.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dataset](#dataset)
+  - [Data Acquisition](#data-acquisition)
+  - [Image Processing](#image-processing)
 - [Features](#features)
+  - [Pre-Processing](#pre-processing)
+  - [Feature Extraction](#feature-extraction)
+  - [Personality Traits](#personality-traits)
 - [Results](#results)
 - [Future Scope](#future-scope)
 - [Contributing](#contributing)
@@ -33,40 +37,41 @@ This project automates graphological analysis using machine learning to predict 
 
 ## Usage
 
-1. Ensure your handwriting samples are in the `data/samples` directory.
+1. Place handwriting samples in the `data/samples` directory.
 2. Run the analysis script:
    ```bash
    python train_predict_v3.py
    ```
-3. The results will be displayed in the terminal.
+3. View the results in the terminal.
+
 ## Dataset
 
 ### Data Acquisition
 
-Data obtained from the IAM Handwriting Database of Research Group on Computer Vision and Artificial Intelligence, INF University of Bern, Switzerland.
+The handwriting data comes from the IAM Handwriting Database by the Research Group on Computer Vision and Artificial Intelligence, INF University of Bern, Switzerland. The dataset includes:
 
-- Contains 1538 pages of scanned text.
-- 657 writers contributed samples of their handwriting.
-- Each handwriting sample is labeled with corresponding psychological traits by manually studying each document.
-- [Dataset URL](https://fki.tic.heia-fr.ch/databases/download-the-iam-handwriting-database)
+- 1,538 pages of scanned handwritten text.
+- 657 different writers.
+- Each sample is annotated with psychological traits through manual document analysis.
+- [Download the dataset here](https://fki.tic.heia-fr.ch/databases/download-the-iam-handwriting-database).
 
   <img src="images/dataset1.png" alt="Database Screenshot" height="300px">
-  
-  *Sample data from IAM Handwriting Database*
 
+  *Sample data from the IAM Handwriting Database*
 
 ### Image Processing
 
-- Images are cropped and saved as PNG images with an automatic action script.
-- The width of all the images is 850 pixels, and the height varies according to the content of the handwriting in the image.
+- Images are cropped and saved as PNGs via an automated script.
+- Width: 850 pixels, Height: variable based on handwriting content.
 
-  <img src="images/processeddataset.png" alt="Data sample after Image Pocessing" height="200px">
+  <img src="images/processeddataset.png" alt="Processed Data Sample" height="200px">
 
   *Data sample after image processing*
 
 ## Features
 
 ### Pre-Processing
+
 - Resolution enhancement
 - Noise reduction
 - Grayscale conversion
@@ -75,6 +80,7 @@ Data obtained from the IAM Handwriting Database of Research Group on Computer Vi
 - Horizontal and vertical projections
 
 ### Feature Extraction
+
 - Baseline
 - Top margin
 - Letter size
@@ -84,9 +90,11 @@ Data obtained from the IAM Handwriting Database of Research Group on Computer Vi
 - Slant angle
 
 ### Personality Traits
-The system predicts eight key psychological attributes:
+
+The system predicts the following psychological traits:
+
 - Emotional Stability
-- Mental Energy or Will Power
+- Mental Energy/Will Power
 - Modesty
 - Personal Harmony and Flexibility
 - Lack of Discipline
@@ -96,36 +104,40 @@ The system predicts eight key psychological attributes:
 
 ## Results
 
-Screenshots of actual terminal output of the model along with it's respective handwriting sample:
+Below are sample outputs showing predicted traits based on handwriting:
 
 ![Terminal Screenshot](images/output1.png)
 *Output 1*
 
 ![Terminal Screenshot](images/output2.png)
-*output 2*
+*Output 2*
+
 ## Future Scope
 
-### Development of a User Interface (UI)
-- Aim to design and implement an intuitive UI that facilitates easy access for the general public, enabling them to utilize the handwriting biometrics system effectively.
+### User Interface Development
 
-### Integration of Convolutional Neural Networks (CNN)
-- Transition from using Support Vector Machines (SVM) to employing CNNs for direct handwriting analysis, leveraging their advanced pattern recognition capabilities to enhance the system’s accuracy.
+Plans to create an intuitive UI to make handwriting analysis accessible to the general public.
 
-### Optimization of Model Performance
-- Focus on reducing the model’s execution time without compromising accuracy, ensuring a more efficient and responsive system for real-time applications.
+### CNN Integration
+
+Shift from Support Vector Machines (SVM) to Convolutional Neural Networks (CNN) for more accurate and direct handwriting analysis.
+
+### Performance Optimization
+
+Work on reducing execution time while maintaining high accuracy for real-time applications.
 
 ## Contributing
 
-1. Fork the repository.
+1. Fork this repository.
 2. Create a new branch:
    ```bash
    git checkout -b feature-branch
    ```
-3. Make your changes and commit them:
+3. Implement your changes and commit:
    ```bash
    git commit -m "Add new feature"
    ```
-4. Push to the branch:
+4. Push the changes:
    ```bash
    git push origin feature-branch
    ```
@@ -133,4 +145,4 @@ Screenshots of actual terminal output of the model along with it's respective ha
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
